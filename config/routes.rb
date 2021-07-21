@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :designers
-  devise_for :producers
+  devise_for :designers, controllers: {
+    registrations: 'designers/registrations'
+  }
+  devise_for :producers, controllers: {
+    registrations: 'producers/registrations'
+  }
+
   root 'home#index'
   resources :designers
   resources :producers
