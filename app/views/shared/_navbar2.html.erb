@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Creative SoulMate</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Access
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <% if producer_signed_in? %>
+                <li><%=link_to 'My Profile', edit_producer_registration_path, class: "dropdown-item" %></li>
+                <li role="separator" class="divider"></li>
+                <li><%=link_to 'Sign Out', destroy_producer_session_path, method: :delete, class: "dropdown-item" %></li>
+            <% elsif designer_signed_in? %>
+                <li><%=link_to 'My Profile', edit_designer_registration_path, class: "dropdown-item" %></li>
+                <li role="separator" class="divider"></li>
+                <li><%=link_to 'Sign Out', destroy_designer_session_path, method: :delete, class: "dropdown-item" %></li>
+            <% else %>
+                <li><%=link_to 'Sign In As Producer', new_producer_session_path, class: "dropdown-item" %></li> 
+                <li><%=link_to 'Sign In As Designer', new_designer_session_path, class: "dropdown-item" %></li>          
+                <li><%=link_to 'Sign Up As Producer', new_producer_registration_path, class: "dropdown-item" %></li>
+                <li><%=link_to 'Sign Up As Designer', new_designer_registration_path, class: "dropdown-item" %></li>
+            <% end %>
+
+            </ul>
+        </li>
+        </ul>
+    </div>
+    </div>
+</nav>
