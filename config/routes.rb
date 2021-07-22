@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :works
+  resources :tracks
   devise_for :designers, controllers: {
     registrations: 'designers/registrations'
   }
