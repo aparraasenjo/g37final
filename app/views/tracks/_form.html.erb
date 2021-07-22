@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :track_name %>
+    <%= form.label :track_name %><br />
     <%= form.text_area :track_name %>
   </div>
 
   <div class="field">
-    <%= form.label :producer_id %>
+    <%= form.label :producer_id %><br />
     <%= form.text_field :producer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :track %><br />
+    <%= form.file_field :file %>
   </div>
 
   <div class="actions">

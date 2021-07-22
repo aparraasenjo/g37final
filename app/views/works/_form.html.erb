@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :work_name %>
+    <%= form.label :work_name %><br />
     <%= form.text_area :work_name %>
   </div>
 
   <div class="field">
-    <%= form.label :designer_id %>
+    <%= form.label :designer_id %><br />
     <%= form.text_field :designer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :work %><br />
+    <%= form.file_field :file %>
   </div>
 
   <div class="actions">
