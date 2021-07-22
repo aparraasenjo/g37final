@@ -21,7 +21,7 @@ class WorksController < ApplicationController
 
   # POST /works or /works.json
   def create
-    @work = Work.new(work_params)
+    @work = Work.new(work_params.merge(designer: current_designer))
 
     respond_to do |format|
       if @work.save
@@ -64,6 +64,6 @@ class WorksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def work_params
-      params.require(:work).permit(:work_name, :designer_id, :file)
+      params.require(:work).permit(:work_name, :file)
     end
 end

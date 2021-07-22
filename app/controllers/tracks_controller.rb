@@ -21,7 +21,7 @@ class TracksController < ApplicationController
 
   # POST /tracks or /tracks.json
   def create
-    @track = Track.new(track_params)
+    @track = Track.new(track_params.merge(producer: current_producer))
 
     respond_to do |format|
       if @track.save
@@ -64,6 +64,6 @@ class TracksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def track_params
-      params.require(:track).permit(:track_name, :producer_id, :file)
+      params.require(:track).permit(:track_name, :file)
     end
 end
