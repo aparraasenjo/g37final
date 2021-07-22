@@ -10,5 +10,11 @@
   <%= @track.producer %>
 </p>
 
+<audio autoplay controls="controls"><br />
+
+    <source src="<%= url_for(@track.file)%>" />
+
+</audio><br /><br />
+
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>
