@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 # gem devise for user authentication
 gem 'acts-as-taggable-on', '~> 7.0'
+gem 'pg_search'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
