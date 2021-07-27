@@ -10,5 +10,12 @@
   <%= @work.designer %>
 </p>
 
+<%= image_tag(@work.file) %>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @work.tag_list %>
+</p>
+
 <%= link_to 'Edit', edit_work_path(@work) %> |
 <%= link_to 'Back', works_path %>

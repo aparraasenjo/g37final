@@ -64,6 +64,6 @@ class TracksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def track_params
-      params.require(:track).permit(:track_name, :file)
+      params.require(:track).permit(:track_name, :file, :tag_list)
     end
 end

@@ -10,6 +10,11 @@
   <%= @track.producer %>
 </p>
 
+<p>
+  <strong>Tags:</strong>
+  <%= @track.tag_list %>
+</p>
+
 <audio autoplay controls="controls"><br />
 
     <source src="<%= url_for(@track.file)%>" />
