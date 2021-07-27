@@ -1,5 +1,25 @@
 <h1 class="text-center">Looking for a creative SOULMATE?</h1>
 <h2 class="text-center">If you are a music producer or a designer looking to interact, this is your place!</h2>
+
+<% if producer_signed_in? %>
+    <div class="container text-center">
+        <h1>Start Searching!</h1>
+        <%= form_for(root_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Enter tag term" %>
+            <%= submit_tag "Search" %>
+        <% end %>
+        <ul id="search-results"></ul>
+    </div>
+<% elsif designer_signed_in? %>
+    <div class="container text-center">
+        <h1>Start Searching!</h1>
+        <%= form_for(root_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Enter tag term" %>
+            <%= submit_tag "Search" %>
+        <% end %>
+        <ul id="search-results"></ul>
+    </div>
+<% else %>
 <div class="container text-center">
     <div class="row">
         <div class="col-md-6">
@@ -10,3 +30,4 @@
         </div>
     </div>
 </div>
+<% end %>

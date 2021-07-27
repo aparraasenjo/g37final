@@ -1,0 +1,3 @@
+var div = document.querySelector('#search-results')
+<% tracks = @search.map { |s| "<li><a href=\"#\">#{s.track_name}</a></li>" }  %>
+div.innerHTML = '<%= tracks.join('').html_safe %>'
