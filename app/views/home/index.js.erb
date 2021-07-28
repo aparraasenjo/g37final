@@ -1,3 +1,9 @@
 var div = document.querySelector('#search-results')
+<% if designer_signed_in? %>
 <% tracks = @search.map { |s| "<li><a href=\"#\">#{s.track_name}</a></li>" }  %>
 div.innerHTML = '<%= tracks.join('').html_safe %>'
+<% elsif producer_signed_in? %>
+<% tracks = @search.map { |s| "<li><a href=\"#\">#{s.work_name}</a></li>" }  %>
+div.innerHTML = '<%= tracks.join('').html_safe %>'
+<% end %>
+
