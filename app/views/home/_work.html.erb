@@ -1,4 +1,11 @@
-<li>
-    <a href="#"><%= s[@opt] %></a>
-    <%= image_tag(s.file) %>
-</li>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><%= s[@opt] %></h5>
+        <p class="card-text">From: <%= s.designer %></p>
+        <p class="card-text"><small class="text-muted"><%= s.created_at %></small></p>
+    </div >
+    <%= image_tag(s.file, width: "40%") %>
+    <div class="card-body">
+    <a href="#" class="btn btn-primary">SoulMate!</a>
+    </div>
+</div><br><br>
