@@ -1,9 +1,5 @@
 var div = document.querySelector('#search-results')
-<% if designer_signed_in? %>
-<% tracks = @search.map { |s| "<li><a href=\"#\">#{s.track_name}</a></li>" }  %>
-div.innerHTML = '<%= tracks.join('').html_safe %>'
-<% elsif producer_signed_in? %>
-<% tracks = @search.map { |s| "<li><a href=\"#\">#{s.work_name}</a></li>" }  %>
-div.innerHTML = '<%= tracks.join('').html_safe %>'
-<% end %>
 
+<% elements = @search.map { |search| j render partial: @class_name.downcase, locals: { s: search }} %>
+
+div.innerHTML = "<%= elements.join('').html_safe %>"

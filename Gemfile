@@ -19,6 +19,7 @@ gem 'devise'
 # gem devise for user authentication
 gem 'acts-as-taggable-on', '~> 7.0'
 gem 'pg_search'
+gem 'plyr-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

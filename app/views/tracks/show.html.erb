@@ -15,11 +15,10 @@
   <%= @track.tag_list %>
 </p>
 
-<audio autoplay controls="controls"><br />
-
-    <source src="<%= url_for(@track.file)%>" />
-
-</audio><br /><br />
+<audio id="player" controls>
+    <source src="<%= url_for(@track.file)%>" type="audio/mp3">
+</audio>
 
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>
+
