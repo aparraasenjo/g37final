@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :work_mates
+  resources :track_mates
   resources :works
   resources :tracks
 

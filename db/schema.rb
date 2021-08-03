@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_235721) do
+ActiveRecord::Schema.define(version: 2021_08_02_232425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,12 +89,32 @@ ActiveRecord::Schema.define(version: 2021_07_26_235721) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "track_mates", force: :cascade do |t|
+    t.bigint "track_id"
+    t.bigint "designer_id"
+    t.integer "state", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["designer_id"], name: "index_track_mates_on_designer_id"
+    t.index ["track_id"], name: "index_track_mates_on_track_id"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.text "track_name", null: false
     t.bigint "producer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["producer_id"], name: "index_tracks_on_producer_id"
+  end
+
+  create_table "work_mates", force: :cascade do |t|
+    t.bigint "work_id"
+    t.bigint "producer_id"
+    t.integer "state", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["producer_id"], name: "index_work_mates_on_producer_id"
+    t.index ["work_id"], name: "index_work_mates_on_work_id"
   end
 
   create_table "works", force: :cascade do |t|
@@ -107,6 +127,10 @@ ActiveRecord::Schema.define(version: 2021_07_26_235721) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "track_mates", "designers"
+  add_foreign_key "track_mates", "tracks"
   add_foreign_key "tracks", "producers"
+  add_foreign_key "work_mates", "producers"
+  add_foreign_key "work_mates", "works"
   add_foreign_key "works", "designers"
 end

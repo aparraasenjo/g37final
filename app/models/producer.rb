@@ -5,4 +5,6 @@ class Producer < ApplicationRecord
   def to_s
     name
   end
+  has_many :work_mates, dependent: :destroy
+  has_many :works, through: :work_mates
 end

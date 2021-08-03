@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Work Mates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Work</th>
+      <th>Producer</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_mates.each do |work_mate| %>
+      <tr>
+        <td><%= work_mate.work %></td>
+        <td><%= work_mate.producer %></td>
+        <td><%= work_mate.state %></td>
+        <td><%= link_to 'Show', work_mate %></td>
+        <td><%= link_to 'Edit', edit_work_mate_path(work_mate) %></td>
+        <td><%= link_to 'Destroy', work_mate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work Mate', new_work_mate_path %>

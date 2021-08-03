@@ -1,0 +1,32 @@
+<%= form_with(model: track_mate, local: true) do |form| %>
+  <% if track_mate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(track_mate.errors.count, "error") %> prohibited this track_mate from being saved:</h2>
+
+      <ul>
+      <% track_mate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :track_id %>
+    <%= form.text_field :track_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :designer_id %>
+    <%= form.text_field :designer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

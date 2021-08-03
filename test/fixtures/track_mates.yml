@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  track: one
+  designer: one
+  state: 1
+
+two:
+  track: two
+  designer: two
+  state: 1

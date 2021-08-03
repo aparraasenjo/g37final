@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Work:</strong>
+  <%= @work_mate.work %>
+</p>
+
+<p>
+  <strong>Producer:</strong>
+  <%= @work_mate.producer %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @work_mate.state %>
+</p>
+
+<%= link_to 'Edit', edit_work_mate_path(@work_mate) %> |
+<%= link_to 'Back', work_mates_path %>

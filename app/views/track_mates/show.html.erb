@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @track_mate.track %>
+</p>
+
+<p>
+  <strong>Designer:</strong>
+  <%= @track_mate.designer %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @track_mate.state %>
+</p>
+
+<%= link_to 'Edit', edit_track_mate_path(@track_mate) %> |
+<%= link_to 'Back', track_mates_path %>

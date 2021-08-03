@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  work: one
+  producer: one
+  state: 1
+
+two:
+  work: two
+  producer: two
+  state: 1

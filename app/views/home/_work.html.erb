@@ -6,6 +6,6 @@
     </div >
     <%= image_tag(s.file, width: "40%") %>
     <div class="card-body">
-    <a href="#" class="btn btn-primary">SoulMate!</a>
+        <%= button_to "SoulMate!", work_mates_path(work_id: s.id, method: :post), class: "btn btn-primary" %>
     </div>
 </div><br><br>
