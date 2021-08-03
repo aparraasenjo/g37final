@@ -4,4 +4,7 @@ class Track < ApplicationRecord
   acts_as_taggable_on :tags
   has_many :track_mates, dependent: :destroy
   has_many :designers, through: :track_mates
+  def to_s
+    track_name
+  end
 end

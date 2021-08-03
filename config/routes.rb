@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   resources :designers do
     get :pending
     get :works
+    get :requested
   end
   resources :producers do
     get :pending
     get :tracks
+    get :requested
   end
   root 'home#index'
 end

@@ -19,6 +19,8 @@
                 <li role="separator" class="divider"></li>
                 <li><%=link_to 'My Pending SoulMates', producer_pending_path(current_producer), class: "dropdown-item" %></li>
                 <li role="separator" class="divider"></li>
+                <li><%=link_to 'My Requested SoulMates', producer_requested_path(current_producer), class: "dropdown-item" %></li>
+                <li role="separator" class="divider"></li>
                 <li><%=link_to 'Sign Out', destroy_producer_session_path, method: :delete, class: "dropdown-item" %></li>
             <% elsif designer_signed_in? %>
                 <li><%=link_to 'My Profile', edit_designer_registration_path, class: "dropdown-item" %></li>
@@ -26,6 +28,8 @@
                 <li><%=link_to 'My Works', designer_works_path(current_designer), class: "dropdown-item" %></li>
                 <li role="separator" class="divider"></li>
                 <li><%=link_to 'My Pending SoulMates', designer_pending_path(current_designer), class: "dropdown-item" %></li>
+                <li role="separator" class="divider"></li>
+                <li><%=link_to 'My Requested SoulMates', designer_requested_path(current_designer), class: "dropdown-item" %></li>
                 <li role="separator" class="divider"></li>
                 <li><%=link_to 'Sign Out', destroy_designer_session_path, method: :delete, class: "dropdown-item" %></li>
             <% else %>

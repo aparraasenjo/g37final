@@ -23,6 +23,10 @@ class DesignersController < ApplicationController
     @works = Work.where(designer_id: current_designer.id)
   end
 
+  def requested
+    @requested = WorkMate.where(work_id: current_designer.works.pluck(:id)).where(state: 'pending')
+  end
+
   def pending
     @pending = TrackMate.where(designer_id: current_designer.id, state: "pending")
   end

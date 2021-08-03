@@ -23,6 +23,10 @@ class ProducersController < ApplicationController
     @tracks = Track.where(producer_id: current_producer.id)
   end
 
+  def requested
+    @requested = TrackMate.where(track_id: current_producer.tracks.pluck(:id)).where(state: 'pending')
+  end
+
   def pending
     @pending = WorkMate.where(producer_id: current_producer.id, state: "pending")
   end
