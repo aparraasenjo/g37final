@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   devise_for :producers, controllers: {
     registrations: 'producers/registrations'
   }
-  resources :designers
-  resources :producers
+  resources :designers do
+    get :pending
+    get :works
+  end
+  resources :producers do
+    get :pending
+    get :tracks
+  end
   root 'home#index'
 end

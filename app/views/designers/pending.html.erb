@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pending SoulMates</h1>
+
+<% @pending.each do |pending| %>
+<div class="container">
+    <ul class="list-unstyled">
+    <li>
+        <audio id="player" controls>
+            <source src="<%= url_for(pending.track.file) %>" type="audio/mp3">
+        </audio>
+    </li>
+        <li><%= pending.track.producer %></li>
+    </ul>
+</div>
+<% end %>
+
+

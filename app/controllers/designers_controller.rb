@@ -19,6 +19,14 @@ class DesignersController < ApplicationController
   def edit
   end
 
+  def works
+    @works = Work.where(designer_id: current_designer.id)
+  end
+
+  def pending
+    @pending = TrackMate.where(designer_id: current_designer.id, state: "pending")
+  end
+
   # POST /designers or /designers.json
   def create
     @designer = Designer.new(designer_params)

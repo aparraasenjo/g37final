@@ -19,6 +19,14 @@ class ProducersController < ApplicationController
   def edit
   end
 
+  def tracks
+    @tracks = Track.where(producer_id: current_producer.id)
+  end
+
+  def pending
+    @pending = WorkMate.where(producer_id: current_producer.id, state: "pending")
+  end
+
   # POST /producers or /producers.json
   def create
     @producer = Producer.new(producer_params)
