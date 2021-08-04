@@ -5,12 +5,13 @@
 <% @pending.each do |pending| %>
 <div class="container">
     <ul class="list-unstyled">
+    <li> Name: <%=pending.track.track_name  %></li>
     <li>
         <audio id="player" controls>
             <source src="<%= url_for(pending.track.file) %>" type="audio/mp3">
         </audio>
     </li>
-        <li><%= pending.track.producer %></li>
+        <li>From: <%= pending.track.producer %></li>
     </ul>
 </div>
 <% end %>

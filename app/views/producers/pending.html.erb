@@ -5,10 +5,11 @@
 <% @pending.each do |pending| %>
 <div class="container">
     <ul class="list-unstyled">
+    <li> Name: <%=pending.work.work_name  %></li>
     <li>
         <%= image_tag(pending.work.file, width: "40%") %>
     </li>
-        <li><%= pending.work.designer %></li>
+        <li>From: <%= pending.work.designer %></li>
     </ul>
 </div>
 <% end %>

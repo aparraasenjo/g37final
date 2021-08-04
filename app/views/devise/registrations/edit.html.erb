@@ -47,11 +47,13 @@
 <% if producer_signed_in? %>
 <h3>My Requested Stats:</h3>
 <%= pie_chart TrackMate.group(:state).where(track_id: current_producer.tracks.pluck(:id)).count %>
-<h3>My Tracks Tags:</h3>
+<h3>Overall Tags</h3>
 <%= pie_chart ActsAsTaggableOn::Tag.all.group(:name).count %>
 <% else %>
 <h3>My Requested Stats:</h3>
 <%= pie_chart WorkMate.group(:state).where(work_id: current_designer.works.pluck(:id)).count %>
+<h3>Overall Tags</h3>
+<%= pie_chart ActsAsTaggableOn::Tag.all.group(:name).count %>
 <% end %>
 <%= link_to "Back", :back %>
 
