@@ -32,27 +32,10 @@
         </div>
     </div><br><br>
     <h5>SOME OF THE USERS THAT HAVE BENEFIT FROM CREATIVE SOULMATE:</h5><br><br>
-    <div class="card-deck">
-    </div>
-    <script>
-    fetch('https://randomuser.me/api/?results=50')
-    .then((response) => response.json())
-    .then(function(data){
-        const users = data.results.map(function(user){
-            const node = document.createElement('div')
-            node.className = 'card'
-            node.innerHTML = `
-            <div class="card-body">
-                <h5 class="card-title">${user.name.first}</h5>
-                <p class="card-text">${user.email}</p>
-            </div>`
+    <div class="card-deck" id="get_api"></div>
 
-            return node
-        })
-        const cardDeck = document.querySelector('.card-deck')
-        users.forEach((user) => cardDeck.appendChild(user))
-    })
-    .catch((error) => console.error(error))
+    <script>
+
     </script>
 </div>
 <% end %>
