@@ -3,7 +3,7 @@ class WorksController < ApplicationController
 
   # GET /works or /works.json
   def index
-    @works = Work.all
+    @works = Work.where(designer_id: current_designer.id)
   end
 
   # GET /works/1 or /works/1.json

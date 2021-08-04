@@ -3,7 +3,7 @@ class TracksController < ApplicationController
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.all
+    @tracks = Track.where(producer_id: current_producer.id)
   end
 
   # GET /tracks/1 or /tracks/1.json
