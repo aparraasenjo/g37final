@@ -11,5 +11,8 @@
         <% else %>
             <%= button_to "SoulMate!", work_mates_path(work_id: s.id, method: :post), class: "btn btn-primary" %>
         <% end %>
+    <div class="card-footer text-muted">
+        <%= s.tag_list %>
+    </div>
     </div>
 </div><br><br>

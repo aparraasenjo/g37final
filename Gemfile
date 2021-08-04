@@ -21,6 +21,7 @@ gem 'acts-as-taggable-on', '~> 7.0'
 gem 'pg_search'
 gem 'plyr-rails'
 gem 'chartkick'
+gem 'activeadmin'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
