@@ -1,5 +1,5 @@
 class Producer < ApplicationRecord
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   def to_s
