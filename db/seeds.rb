@@ -61,3 +61,66 @@ designers.each do |designer|
     work1.save
     work2.save
 end
+
+
+state = ["pending", "rejected", "accepted"]
+TrackMate.create!(
+    designer_id: 1,
+    track_id: 1,
+    state: state.sample
+)
+TrackMate.create!(
+    designer_id: 1,
+    track_id: 2,
+    state: state.sample
+)
+TrackMate.create!(
+    designer_id: 2,
+    track_id: 3,
+    state: state.sample
+)
+TrackMate.create!(
+    designer_id: 2,
+    track_id: 4,
+    state: state.sample
+)
+TrackMate.create!(
+    designer_id: 3,
+    track_id: 5,
+    state: state.sample
+)
+TrackMate.create!(
+    designer_id: 3,
+    track_id: 6,
+    state: state.sample
+)
+WorkMate.create!(
+    producer_id: 1,
+    work_id: 1,
+    state: state.sample
+)
+WorkMate.create!(
+    producer_id: 1,
+    work_id: 2,
+    state: state.sample
+)
+WorkMate.create!(
+    producer_id: 2,
+    work_id: 3,
+    state: state.sample
+)
+WorkMate.create!(
+    producer_id: 2,
+    work_id: 4,
+    state: state.sample
+)
+WorkMate.create!(
+    producer_id: 3,
+    work_id: 5,
+    state: state.sample
+)
+WorkMate.create!(
+    producer_id: 3,
+    work_id: 6,
+    state: state.sample
+)

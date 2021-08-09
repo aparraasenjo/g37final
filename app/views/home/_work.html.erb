@@ -7,7 +7,7 @@
     <%= image_tag(s.file, width: "40%") %>
     <div class="card-body">
         <% if WorkMate.exists?(producer_id: current_producer.id, work_id: s.id) %>
-            <%= button_to "Pending Request!", class: "btn btn-primary" %>
+            <p>Pending Request!</p>
         <% else %>
             <%= button_to "SoulMate!", work_mates_path(work_id: s.id, method: :post), class: "btn btn-primary" %>
         <% end %>
