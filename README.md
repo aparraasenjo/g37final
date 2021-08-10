@@ -69,4 +69,10 @@ heroku run rake db:seed
 then run heroku open to log in into the app with heroku
 use the same credentials afore mentioned to log in as a producer or a designer
 
+To log in into the admin use the following route:
+http://localhost:3000/admin/login
+and use the following credentials:
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') 
+
 Enjoy!
