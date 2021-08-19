@@ -24,7 +24,7 @@ class DesignersController < ApplicationController
   end
 
   def requested
-    @requested = WorkMate.where(work_id: current_designer.works.pluck(:id)).where(state: 'pending')
+    @requested = WorkMate.where(work_id: current_designer.works.pluck(:id))
   end
 
   def pending

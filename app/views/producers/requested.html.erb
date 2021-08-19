@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Track Mates</h1>
+<h1>My Requested Tracks</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Track</th>
-      <th>Designer</th>
+      <th>My Track</th>
+      <th>Requested By</th>
       <th>State</th>
       <th colspan="3"></th>
     </tr>
@@ -18,8 +18,6 @@
         <td><%= r.track %></td>
         <td><%= r.designer %></td>
         <td><%= r.state %></td>
-        <td><%= link_to 'Show', r %></td>
-        <td><%= link_to 'Edit', edit_track_mate_path(r) %></td>
         <td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

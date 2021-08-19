@@ -1,9 +1,7 @@
-<h1 class="text-center">Looking for a creative SOULMATE?</h1>
-<h2 class="text-center">If you are a music producer or a designer looking to interact, this is your place!</h2>
-
 <% if producer_signed_in? %>
     <div class="container text-center">
-        <h1>Start Searching!</h1>
+        <h1>Welcome <%= current_producer.name %></h1><br><br><br>
+        <h4>Use the searching bar to look for tags related to the works you are interested in</h4>
         <%= form_for(root_path, remote: true, method: :get) do %>
             <%= text_field_tag :search, params[:search], placeholder: "Enter tag term" %>
             <%= submit_tag "Search" %>
@@ -12,8 +10,9 @@
         <ul id="search-results"></ul>
     </div>
 <% elsif designer_signed_in? %>
-    <div class="container text-center">
-        <h1>Start Searching!</h1>
+    <div class="container text-center"><br><br><br>
+        <h1>Welcome <%= current_designer.name %></h1><br><br><br>
+        <h4>Use the searching bar to look for tags related to the works you are interested in</h4>
         <%= form_for(root_path, remote: true, method: :get) do %>
             <%= text_field_tag :search, params[:search], placeholder: "Enter tag term" %>
             <%= submit_tag "Search" %>
@@ -23,6 +22,8 @@
     </div>
 <% else %>
 <div class="container text-center">
+    <h1 class="text-center">Looking for a creative SOULMATE?</h1>
+    <h2 class="text-center">If you are a music producer or a designer looking to interact, this is your place!</h2>
     <div class="row">
         <div class="col-md-6">
             <h3><%=link_to 'Are you a Producer?', new_producer_registration_path %></h3>
