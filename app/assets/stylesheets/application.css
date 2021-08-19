@@ -14,3 +14,7 @@
  *= require_self
 
  */
+
+.background, .card {
+    background-image: url('/assets/background.jpeg');
+}
